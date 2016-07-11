@@ -1,0 +1,29 @@
+package com.example.jnitest;
+
+import android.os.Bundle;
+import android.app.Activity;
+import android.util.Log;
+import android.view.Menu;
+
+public class MainActivity extends Activity {
+	
+	private JNITest jni;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        jni = new JNITest();
+      //  jni.sayHello("helloWorld");
+        Log.d("zdx", "2+3="+jni.Library(2,3));
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+    
+}
